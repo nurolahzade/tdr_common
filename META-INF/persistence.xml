@@ -17,11 +17,11 @@
 		<class>ca.ucalgary.cpsc.ase.common.entity.Position</class>
 		<class>ca.ucalgary.cpsc.ase.common.entity.Control</class>
 		<class>ca.ucalgary.cpsc.ase.common.entity.ControlFlow</class>
-		<class>ca.ucalgary.cpsc.ase.common.entity.DataFlow</class>
 		<class>ca.ucalgary.cpsc.ase.common.entity.MethodInvocation</class>
 		<class>ca.ucalgary.cpsc.ase.common.entity.Argument</class>
 		
 		<properties>
+			<property name="hibernate.show_sql" value="false"/>
 			<property name="hibernate.dialect" value="org.hibernate.dialect.MySQL5Dialect"/>
           	<property name="hibernate.transaction.factory_class" value="org.hibernate.transaction.CMTTransactionFactory"/>
             <property name="hibernate.transaction.manager_lookup_class" value="org.hibernate.transaction.JBossTransactionManagerLookup"/>			

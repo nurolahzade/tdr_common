@@ -1,7 +1,10 @@
 package ca.ucalgary.cpsc.ase.common.query;
 
 import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.List;
+import java.util.Map;
+import java.util.Set;
 
 
 public class Query {
@@ -12,6 +15,7 @@ public class Query {
 	private List<QueryMethod> invocations;
 	private List<QueryException> exceptions;
 	private List<QueryAssertion> assertions;
+	private Map<QueryMethod, Set<QueryInvocation>> dataFlows;
 //	private List<QueryAssertionParameter> parameters;
 		
 	public QueryTestMethod getTestMethod() {
@@ -104,6 +108,22 @@ public class Query {
 				return;
 			}
 		assertions.add(assertion);
+	}
+	
+	public void addDataFlow(QueryMethod from, QueryInvocation to) {
+		Set<QueryInvocation> receivers;
+		if (!dataFlows.containsKey(from)) {
+			receivers = new HashSet<QueryInvocation>();
+			dataFlows.put(from, receivers);
+		}
+		else {
+			receivers = dataFlows.get(from);
+		}
+		receivers.add(to);
+	}
+	
+	public Map<QueryMethod, Set<QueryInvocation>> getDataFlows() {
+		return dataFlows;
 	}
 		
 //	public List<QueryAssertionParameter> getParameters() {

@@ -13,5 +13,7 @@ public interface MethodInvocationServiceRemote {
 
 	public MethodInvocation create(TestMethod tm, Method m, Assertion a,
 			Position p);
+	
+	public void addDataFlowRelationship(MethodInvocation from, MethodInvocation to);
 
 }

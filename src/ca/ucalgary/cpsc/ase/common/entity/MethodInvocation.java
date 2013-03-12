@@ -22,13 +22,17 @@ public class MethodInvocation implements CodeEntity {
 	@JoinColumn(name="control_flow_id")
 	private ControlFlow controlFlow;
 
-	//bi-directional many-to-one association to DataFlow
-	@OneToMany(mappedBy="fromMethod")
-	private Set<DataFlow> flowsFrom;
+	//bi-directional many-to-one association to self
+	@ManyToMany(mappedBy="flowsTo")
+	private Set<MethodInvocation> flowsFrom;
 
-	//bi-directional many-to-one association to DataFlow
-	@OneToMany(mappedBy="toMethod")
-	private Set<DataFlow> flowsTo;
+	//bi-directional many-to-one association to self
+	@ManyToMany
+	@JoinTable(name="DataFlow",
+			joinColumns={@JoinColumn(name="from_method_invocation_id")},
+			inverseJoinColumns={@JoinColumn(name="to_method_invocation_id")}
+	) 
+	private Set<MethodInvocation> flowsTo;
 
 	//bi-directional many-to-one association to TestMethod
     @ManyToOne
@@ -66,19 +70,19 @@ public class MethodInvocation implements CodeEntity {
 		this.controlFlow = controlFlow;
 	}
 	
-	public Set<DataFlow> getDataFlowsFrom() {
+	public Set<MethodInvocation> getDataFlowsFrom() {
 		return this.flowsFrom;
 	}
 
-	public void setDataFlowsFrom(Set<DataFlow> dataFlows) {
+	public void setDataFlowsFrom(Set<MethodInvocation> dataFlows) {
 		this.flowsFrom = dataFlows;
 	}
 	
-	public Set<DataFlow> getDataFlowsTo() {
+	public Set<MethodInvocation> getDataFlowsTo() {
 		return this.flowsTo;
 	}
 
-	public void setDataflowssTo(Set<DataFlow> dataFlows) {
+	public void setDataflowssTo(Set<MethodInvocation> dataFlows) {
 		this.flowsTo = dataFlows;
 	}
 	
