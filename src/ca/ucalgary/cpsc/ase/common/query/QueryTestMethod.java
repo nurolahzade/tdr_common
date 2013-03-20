@@ -2,6 +2,8 @@ package ca.ucalgary.cpsc.ase.common.query;
 
 public class QueryTestMethod extends QueryElement {
 	
+	private static final long serialVersionUID = 2248853977744399794L;
+
 	private String name;
 
 	public String getName() {

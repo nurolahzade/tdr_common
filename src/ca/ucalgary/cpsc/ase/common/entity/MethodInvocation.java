@@ -10,7 +10,14 @@ import java.util.Set;
  */
 @Entity
 @Table(name="MethodInvocation")
+@NamedQueries({
+	@NamedQuery(name="MethodToMethodDataFlowPath", 
+			query="SELECT DISTINCT f.testMethod.clazz FROM MethodInvocation f, IN(f.flowsTo) t WHERE f.method.id IN :list1 AND t.method.id IN :list2"),
+	@NamedQuery(name="MethodToAssertionDataFlowPath", 
+			query="SELECT DISTINCT f.testMethod.clazz FROM MethodInvocation f, IN(f.flowsTo) t WHERE f.method.id IN :list AND t.assertion = :assertion")
+})
 public class MethodInvocation implements CodeEntity {
+	
 	private static final long serialVersionUID = 1L;
 
 	@Id

@@ -2,6 +2,8 @@ package ca.ucalgary.cpsc.ase.common.query;
 
 public class QueryReference extends QueryElement {
 	
+	private static final long serialVersionUID = 6312736453139618167L;
+
 	private String clazzFqn;
 	private String declaringClazzFqn;
 	private String name;

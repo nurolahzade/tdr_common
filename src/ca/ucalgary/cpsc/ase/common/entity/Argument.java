@@ -49,5 +49,10 @@ public class Argument implements CodeEntity {
 	public void setClazz(Clazz clazz) {
 		this.clazz = clazz;
 	}
+
+	@Override
+	public String toString() {
+		return clazz.getFqn();
+	}	
 		
 }

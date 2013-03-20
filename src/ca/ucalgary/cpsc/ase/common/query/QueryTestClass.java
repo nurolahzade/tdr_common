@@ -4,6 +4,8 @@ import ca.ucalgary.cpsc.ase.common.entity.ObjectType;
 
 public class QueryTestClass extends QueryElement {
 
+	private static final long serialVersionUID = -7881114184897141838L;
+
 	private String name;
 	private String packageName;
 	private ObjectType type;

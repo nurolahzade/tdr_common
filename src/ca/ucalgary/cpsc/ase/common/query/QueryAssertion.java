@@ -4,6 +4,8 @@ import ca.ucalgary.cpsc.ase.common.entity.AssertionType;
 
 public class QueryAssertion extends QueryInvocation {
 
+	private static final long serialVersionUID = -113944632599685457L;
+
 	private AssertionType type;
 
 	public AssertionType getType() {

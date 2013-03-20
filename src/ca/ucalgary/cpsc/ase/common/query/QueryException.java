@@ -2,6 +2,8 @@ package ca.ucalgary.cpsc.ase.common.query;
 
 public class QueryException extends QueryElement {
 
+	private static final long serialVersionUID = 7884743302710271981L;
+
 	private String clazzFqn;
 
 	public String getClazzFqn() {

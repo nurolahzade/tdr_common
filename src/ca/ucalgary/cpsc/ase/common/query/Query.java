@@ -1,13 +1,17 @@
 package ca.ucalgary.cpsc.ase.common.query;
 
+import java.io.Serializable;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
 
 
-public class Query {
+public class Query implements Serializable {
+
+	private static final long serialVersionUID = 7478726256010863504L;
 
 	private QueryTestMethod testMethod;
 	private QueryTestClass testClass;
@@ -112,6 +116,9 @@ public class Query {
 	
 	public void addDataFlow(QueryMethod from, QueryInvocation to) {
 		Set<QueryInvocation> receivers;
+		if (dataFlows == null) {
+			dataFlows = new HashMap<QueryMethod, Set<QueryInvocation>>();
+		}
 		if (!dataFlows.containsKey(from)) {
 			receivers = new HashSet<QueryInvocation>();
 			dataFlows.put(from, receivers);

@@ -13,5 +13,6 @@ public abstract class ServiceDirectory {
 	public static final String SOURCE_FILE_SERVICE = "ejb/SourceFileService";
 	public static final String TEST_METHOD_SERVICE = "ejb/TestMethodService";
 	public static final String XCEPTION_SERVICE = "ejb/XceptionService";
+	public static final String HEURISTIC_MANAGER = "ejb/VotingHeuristicManager";
 	
 }

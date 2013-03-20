@@ -3,7 +3,9 @@ Bundle-ManifestVersion: 2
 Bundle-Name: TDR Commons
 Bundle-SymbolicName: ca.ucalgary.cpsc.ase.Common;singleton:=true
 Bundle-Version: 1.0.0.qualifier
-Export-Package: ca.ucalgary.cpsc.ase.common.entity,
+Export-Package: ca.ucalgary.cpsc.ase.common,
+ ca.ucalgary.cpsc.ase.common.entity,
+ ca.ucalgary.cpsc.ase.common.heuristic,
  ca.ucalgary.cpsc.ase.common.query,
  ca.ucalgary.cpsc.ase.common.service
 Bundle-Vendor: Mehrdad Nurolahzade

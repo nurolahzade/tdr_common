@@ -4,6 +4,8 @@ import java.util.List;
 
 public class QueryMethod extends QueryInvocation {
 
+	private static final long serialVersionUID = -5584299118394502693L;
+
 	private String name;
 	private String clazzFqn;
 	private String returnTypeFqn;
@@ -56,7 +58,13 @@ public class QueryMethod extends QueryInvocation {
 		}
 		builder.append(name);
 		builder.append("(");
-		builder.append(arguments);
+		if (arguments != null) {
+			for (int i = 0; i < arguments.size(); ++i) {
+				if (i > 0)
+					builder.append(", ");
+				builder.append(arguments.get(i));
+			}			
+		}
 		builder.append("):");
 		builder.append(returnTypeFqn);
 		return builder.toString();

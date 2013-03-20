@@ -142,6 +142,20 @@ public class Method implements CodeEntity, Invocation {
 
 	@Override
 	public String toString() {
+		StringBuilder builder = new StringBuilder();
+		builder.append(clazz.getFqn());
+		builder.append(".");
+		builder.append(name);
+		builder.append("(");
+		if (arguments != null) {
+			for (int i = 0; i < arguments.size(); ++i) {
+				if (i > 0)
+					builder.append(", ");
+				builder.append(arguments.get(i));
+			}			
+		}
+		builder.append("):");
+		builder.append(returnClazz.getFqn());
 		return clazz.getFqn() + "." + name + "(" + arguments.size() + "):" + 
 			returnClazz.getFqn();
 	}	
