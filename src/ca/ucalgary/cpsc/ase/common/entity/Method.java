@@ -63,6 +63,7 @@ public class Method implements CodeEntity, Invocation {
 	
 	//bi-directional many-to-many association to Argument
 	@OneToMany(mappedBy="method")
+	@OrderColumn(name="_order")
 	private List<Argument> arguments;
 
 	public Method() {
@@ -156,8 +157,7 @@ public class Method implements CodeEntity, Invocation {
 		}
 		builder.append("):");
 		builder.append(returnClazz.getFqn());
-		return clazz.getFqn() + "." + name + "(" + arguments.size() + "):" + 
-			returnClazz.getFqn();
+		return builder.toString();
 	}	
 	
 }

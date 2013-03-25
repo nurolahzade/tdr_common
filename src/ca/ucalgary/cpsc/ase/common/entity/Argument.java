@@ -23,6 +23,9 @@ public class Argument implements CodeEntity {
 	@JoinColumn(name="class_id")
 	private Clazz clazz;
 	
+	@Column(name="_order")
+	private Integer order;
+	
     public Argument() {
     }
 
@@ -48,6 +51,14 @@ public class Argument implements CodeEntity {
 
 	public void setClazz(Clazz clazz) {
 		this.clazz = clazz;
+	}
+
+	public Integer getOrder() {
+		return order;
+	}
+
+	public void setOrder(Integer order) {
+		this.order = order;
 	}
 
 	@Override
