@@ -12,6 +12,9 @@ import javax.persistence.*;
 public class Position implements CodeEntity {
 	private static final long serialVersionUID = 1L;
 
+//	@Version
+//	private Integer version;
+	
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	private String id;
@@ -23,6 +26,10 @@ public class Position implements CodeEntity {
     public Position() {
     }
 
+//    public Integer getVersion() {
+//    	return this.version;
+//    }
+    
 	public String getId() {
 		return this.id;
 	}

@@ -23,6 +23,9 @@ import javax.persistence.*;
 public class Assertion implements CodeEntity, Invocation {
 	private static final long serialVersionUID = 1L;
 
+//	@Version
+//	private Integer version;
+	
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	private Integer id;
@@ -36,6 +39,10 @@ public class Assertion implements CodeEntity, Invocation {
 	
     public Assertion() {
     }
+    
+//    public Integer getVersion() {
+//    	return this.version;
+//    }
 
 	public Integer getId() {
 		return this.id;

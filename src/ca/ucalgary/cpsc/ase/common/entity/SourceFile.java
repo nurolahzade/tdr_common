@@ -15,6 +15,9 @@ import java.util.Set;
 public class SourceFile implements CodeEntity {
 	private static final long serialVersionUID = 1L;
 
+//	@Version
+//	private Integer version;
+	
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	private Integer id;
@@ -33,6 +36,10 @@ public class SourceFile implements CodeEntity {
 
     public SourceFile() {
     }
+
+//    public Integer getVersion() {
+//    	return this.version;
+//    }
 
 	public Integer getId() {
 		return this.id;

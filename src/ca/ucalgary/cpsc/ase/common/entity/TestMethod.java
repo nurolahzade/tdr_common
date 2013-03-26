@@ -18,6 +18,9 @@ import java.util.Set;
 public class TestMethod implements CodeEntity {
 	private static final long serialVersionUID = 1L;
 
+//	@Version
+//	private Integer version;
+	
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	private Integer id;
@@ -59,6 +62,10 @@ public class TestMethod implements CodeEntity {
 
     public TestMethod() {
     }
+
+//    public Integer getVersion() {
+//    	return this.version;
+//    }
 
 	public Integer getId() {
 		return this.id;

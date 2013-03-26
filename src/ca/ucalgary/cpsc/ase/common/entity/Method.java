@@ -31,6 +31,9 @@ import java.util.List;
 public class Method implements CodeEntity, Invocation {
 	private static final long serialVersionUID = 1L;
 
+//	@Version
+//	private Integer version;
+	
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	private Integer id;
@@ -68,6 +71,10 @@ public class Method implements CodeEntity, Invocation {
 
 	public Method() {
     }
+	
+//    public Integer getVersion() {
+//    	return this.version;
+//    }
 
 	public Integer getId() {
 		return this.id;

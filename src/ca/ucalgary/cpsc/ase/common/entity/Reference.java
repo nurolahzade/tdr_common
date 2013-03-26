@@ -25,6 +25,9 @@ import javax.persistence.*;
 public class Reference implements CodeEntity {
 	private static final long serialVersionUID = 1L;
 
+//	@Version
+//	private Integer version;
+	
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	private Integer id;
@@ -51,6 +54,10 @@ public class Reference implements CodeEntity {
 
 	public Reference() {
     }
+	
+//    public Integer getVersion() {
+//    	return this.version;
+//    }	
 
 	public Integer getId() {
 		return this.id;

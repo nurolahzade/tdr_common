@@ -15,6 +15,9 @@ import java.util.Set;
 public class Project implements CodeEntity {
 	private static final long serialVersionUID = 1L;
 
+//	@Version
+//	private Integer version;
+	
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	private Integer id;
@@ -26,12 +29,13 @@ public class Project implements CodeEntity {
 	@Column(name="name")
 	String name;
 	
-	@Column(name="version")
-	String version;
-	
     public Project() {
     }
 
+//    public Integer getVersion() {
+//    	return this.version;
+//    }    
+    
 	public Integer getId() {
 		return this.id;
 	}
@@ -54,14 +58,6 @@ public class Project implements CodeEntity {
 
 	public void setName(String name) {
 		this.name = name;
-	}
-
-	public String getVersion() {
-		return this.version;
-	}
-
-	public void setVersion(String version) {
-		this.version = version;
 	}
 
 	@Override

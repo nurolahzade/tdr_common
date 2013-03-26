@@ -20,6 +20,9 @@ public class MethodInvocation implements CodeEntity {
 	
 	private static final long serialVersionUID = 1L;
 
+//	@Version
+//	private int version;
+	
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	private Integer id;
@@ -30,11 +33,11 @@ public class MethodInvocation implements CodeEntity {
 	private ControlFlow controlFlow;
 
 	//bi-directional many-to-one association to self
-	@ManyToMany(mappedBy="flowsTo")
+	@ManyToMany(mappedBy="flowsTo", fetch=FetchType.LAZY)
 	private Set<MethodInvocation> flowsFrom;
 
 	//bi-directional many-to-one association to self
-	@ManyToMany
+	@ManyToMany(cascade={CascadeType.ALL}, fetch=FetchType.LAZY)
 	@JoinTable(name="DataFlow",
 			joinColumns={@JoinColumn(name="from_method_invocation_id")},
 			inverseJoinColumns={@JoinColumn(name="to_method_invocation_id")}
@@ -61,6 +64,10 @@ public class MethodInvocation implements CodeEntity {
     public MethodInvocation() {
     }
 
+//    public Integer getVersion() {
+//    	return this.version;
+//    }
+
 	public Integer getId() {
 		return this.id;
 	}
@@ -77,13 +84,13 @@ public class MethodInvocation implements CodeEntity {
 		this.controlFlow = controlFlow;
 	}
 	
-	public Set<MethodInvocation> getDataFlowsFrom() {
-		return this.flowsFrom;
-	}
-
-	public void setDataFlowsFrom(Set<MethodInvocation> dataFlows) {
-		this.flowsFrom = dataFlows;
-	}
+//	public Set<MethodInvocation> getDataFlowsFrom() {
+//		return this.flowsFrom;
+//	}
+//
+//	public void setDataFlowsFrom(Set<MethodInvocation> dataFlows) {
+//		this.flowsFrom = dataFlows;
+//	}
 	
 	public Set<MethodInvocation> getDataFlowsTo() {
 		return this.flowsTo;

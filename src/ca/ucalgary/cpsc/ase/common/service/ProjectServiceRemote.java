@@ -7,6 +7,6 @@ import ca.ucalgary.cpsc.ase.common.entity.Project;
 @Remote
 public interface ProjectServiceRemote {
 
-	public Project create(String name, String version);
+	public Project create(String name);
 	
 }

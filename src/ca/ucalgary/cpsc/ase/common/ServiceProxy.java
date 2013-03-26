@@ -11,12 +11,11 @@ import ca.ucalgary.cpsc.ase.common.service.AssertionServiceRemote;
 import ca.ucalgary.cpsc.ase.common.service.ClazzServiceRemote;
 import ca.ucalgary.cpsc.ase.common.service.MethodInvocationServiceRemote;
 import ca.ucalgary.cpsc.ase.common.service.MethodServiceRemote;
-import ca.ucalgary.cpsc.ase.common.service.MyTestServiceRemote;
+import ca.ucalgary.cpsc.ase.common.service.ServiceWrapperRemote;
 import ca.ucalgary.cpsc.ase.common.service.PositionServiceRemote;
 import ca.ucalgary.cpsc.ase.common.service.ProjectServiceRemote;
 import ca.ucalgary.cpsc.ase.common.service.ReferenceServiceRemote;
 import ca.ucalgary.cpsc.ase.common.service.RepositoryFileServiceRemote;
-import ca.ucalgary.cpsc.ase.common.service.ServiceDirectory;
 import ca.ucalgary.cpsc.ase.common.service.SourceFileServiceRemote;
 import ca.ucalgary.cpsc.ase.common.service.TestMethodServiceRemote;
 import ca.ucalgary.cpsc.ase.common.service.XceptionServiceRemote;
@@ -94,8 +93,8 @@ public class ServiceProxy {
 		return (HeuristicManager) lookup(ServiceDirectory.HEURISTIC_MANAGER);
 	}
 
-	public static MyTestServiceRemote getMyTestService() throws NamingException {
-		return (MyTestServiceRemote) lookup("ejb/MyTestService");
+	public static ServiceWrapperRemote getServiceWrapper() throws NamingException {
+		return (ServiceWrapperRemote) lookup(ServiceDirectory.SERVICE_WRAPPER);
 	}	
 	
 }
