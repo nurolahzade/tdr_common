@@ -5,6 +5,7 @@ import java.util.Set;
 
 
 /**
+ * 
  * The persistent class for the MethodInvocation database table.
  * 
  */
@@ -12,9 +13,27 @@ import java.util.Set;
 @Table(name="MethodInvocation")
 @NamedQueries({
 	@NamedQuery(name="MethodToMethodDataFlowPath", 
-			query="SELECT DISTINCT f.testMethod.clazz FROM MethodInvocation f, IN(f.flowsTo) t WHERE f.method.id IN :list1 AND t.method.id IN :list2"),
+			query="SELECT DISTINCT f.testMethod.clazz FROM MethodInvocation f, IN(f.flowsTo) t " +
+					"WHERE f.method.id IN :list1 AND t.method.id IN :list2"),
+					
 	@NamedQuery(name="MethodToAssertionDataFlowPath", 
-			query="SELECT DISTINCT f.testMethod.clazz FROM MethodInvocation f, IN(f.flowsTo) t WHERE f.method.id IN :list AND t.assertion = :assertion")
+			query="SELECT DISTINCT f.testMethod.clazz FROM MethodInvocation f, IN(f.flowsTo) t " +
+					"WHERE f.method.id IN :list AND t.assertion = :assertion"),
+					
+	@NamedQuery(name="MatchingMethodToMethodDataFlows",
+			query="SELECT f.method, t.method FROM MethodInvocation f, MethodInvocation t " +
+					"WHERE f.testMethod.clazz.id = :id AND " +
+					"t.testMethod.clazz.id = :id AND " +
+					"f.method.id IN :list1 AND " +
+					"t.method.id IN :list2 AND " +
+					"t MEMBER OF f.flowsTo"),
+			
+	@NamedQuery(name="MatchingMethodToAssertionDataFlows",
+			query="SELECT f.method, t.assertion FROM MethodInvocation f, MethodInvocation t " +
+					"WHERE f.testMethod.clazz.id = :id AND " +
+					"f.method.id IN :list AND " +
+					"t.assertion = :assertion AND " +
+					"t MEMBER OF f.flowsTo")
 })
 public class MethodInvocation implements CodeEntity {
 	
