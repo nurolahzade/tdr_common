@@ -11,7 +11,7 @@ import java.util.List;
  * 
  */
 @Entity
-@Table(name="Method")
+@Table(name="method")
 @NamedQueries({
 		@NamedQuery(name="FindMethod", query="SELECT m FROM Method m WHERE m.name = :name AND m.clazz = :clazz " +
 				"AND m.returnClazz = :returnClazz AND SIZE(m.arguments) = :arguments AND m.hash = :hash"),

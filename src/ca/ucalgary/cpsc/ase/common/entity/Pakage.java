@@ -10,7 +10,7 @@ import javax.persistence.*;
  * 
  */
 @Entity
-@Table(name="Package")
+@Table(name="package")
 
 @NamedQuery(name="findPakageByFQN", query="SELECT p FROM Pakage p WHERE p.name = :fqn")
 

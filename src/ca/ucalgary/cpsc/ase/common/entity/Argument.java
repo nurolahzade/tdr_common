@@ -8,7 +8,7 @@ import javax.persistence.*;
  * 
  */
 @Entity
-@Table(name="Argument")
+@Table(name="argument")
 public class Argument implements CodeEntity {
 	private static final long serialVersionUID = 1L;
 

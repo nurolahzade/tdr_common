@@ -10,7 +10,7 @@ import java.util.Set;
  * 
  */
 @Entity
-@Table(name="Exception")
+@Table(name="exception")
 @NamedQueries({
 	@NamedQuery(name="FindByClazz", query="SELECT e FROM Xception e WHERE e.clazz = :clazz")
 })

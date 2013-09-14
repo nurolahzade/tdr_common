@@ -8,7 +8,7 @@ import javax.persistence.*;
  * 
  */
 @Entity
-@Table(name="RepositoryFile")
+@Table(name="repositoryfile")
 @NamedQuery(name="FindRepositoryFileByState", query="SELECT rf FROM RepositoryFile rf WHERE rf.state = :state")
 
 public class RepositoryFile implements CodeEntity {

@@ -10,7 +10,7 @@ import java.util.Set;
  * 
  */
 @Entity
-@Table(name="MethodInvocation")
+@Table(name="methodinvocation")
 @NamedQueries({
 	@NamedQuery(name="MethodToMethodDataFlowPath", 
 			query="SELECT DISTINCT f.testMethod.clazz FROM MethodInvocation f, IN(f.flowsTo) t " +
@@ -57,7 +57,7 @@ public class MethodInvocation implements CodeEntity {
 
 	//bi-directional many-to-one association to self
 	@ManyToMany(cascade={CascadeType.ALL}, fetch=FetchType.LAZY)
-	@JoinTable(name="DataFlow",
+	@JoinTable(name="dataflow",
 			joinColumns={@JoinColumn(name="from_method_invocation_id")},
 			inverseJoinColumns={@JoinColumn(name="to_method_invocation_id")}
 	) 

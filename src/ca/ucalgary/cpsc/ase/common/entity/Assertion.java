@@ -10,7 +10,7 @@ import javax.persistence.*;
  * 
  */
 @Entity
-@Table(name="Assertion")
+@Table(name="assertion")
 @NamedQueries({
 	@NamedQuery(name="findByType", query="SELECT a FROM Assertion a " +
 			"WHERE a.type = :type"),

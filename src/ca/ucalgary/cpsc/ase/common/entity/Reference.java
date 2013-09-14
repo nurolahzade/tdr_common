@@ -9,7 +9,7 @@ import javax.persistence.*;
  */
 
 @Entity
-@Table(name="Reference")
+@Table(name="reference")
 @NamedQueries({
 		@NamedQuery(name="FindReference", query="SELECT r FROM Reference r " +
 				"WHERE r.name = :name AND r.clazz = :clazz AND r.declaringClazz = :declaring AND r.testMethod = :method"),

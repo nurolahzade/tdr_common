@@ -10,7 +10,7 @@ import java.util.Set;
  * 
  */
 @Entity
-@Table(name="Class")
+@Table(name="class")
 @NamedQueries({
 	@NamedQuery(name="findByFQN", query="SELECT c FROM Clazz c WHERE c.fqn = :fqn"),
 	

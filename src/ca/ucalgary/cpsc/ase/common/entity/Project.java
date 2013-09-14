@@ -10,7 +10,7 @@ import java.util.Set;
  * 
  */
 @Entity
-@Table(name="Project")
+@Table(name="project")
 
 public class Project implements CodeEntity {
 	private static final long serialVersionUID = 1L;

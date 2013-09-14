@@ -10,7 +10,7 @@ import java.util.Set;
  * 
  */
 @Entity
-@Table(name="Control")
+@Table(name="control")
 public class Control implements Serializable, CodeEntity {
 	private static final long serialVersionUID = 1L;
 

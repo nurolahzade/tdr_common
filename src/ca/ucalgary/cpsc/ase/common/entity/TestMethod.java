@@ -11,7 +11,7 @@ import java.util.Set;
  * 
  */
 @Entity
-@Table(name="TestMethod")
+@Table(name="testmethod")
 @NamedQueries({
 })
 
