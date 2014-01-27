@@ -22,5 +22,8 @@ public interface HeuristicManager {
 
 	public abstract Map<String, Set<String>> getMatchingDataFlows(Integer id, Query q)
 			throws Exception;
+
+	public Map<Integer, VotingResult> simulateInterfaceBasedRetrieval(
+			Query query, String sut);
 		
 }
